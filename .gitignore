@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#dataset
+train2017/
+annotations/
+mask_rcnn_coco.h5
