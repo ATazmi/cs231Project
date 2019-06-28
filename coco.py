@@ -61,7 +61,7 @@ COCO_MODEL_PATH = os.path.join(ROOT_DIR, "mask_rcnn_coco.h5")
 # Directory to save logs and model checkpoints, if not provided
 # through the command line argument --logs
 DEFAULT_LOGS_DIR = os.path.join(ROOT_DIR, "logs")
-DEFAULT_DATASET_YEAR = "2014"
+DEFAULT_DATASET_YEAR = "2017"
 
 ############################################################
 #  Configurations
@@ -411,7 +411,7 @@ if __name__ == '__main__':
     parser.add_argument('--year', required=False,
                         default=DEFAULT_DATASET_YEAR,
                         metavar="<year>",
-                        help='Year of the MS-COCO dataset (2014 or 2017) (default=2014)')
+                        help='Year of the MS-COCO dataset (2014 or 2017) (default=2017)')
     parser.add_argument('--model', required=True,
                         metavar="/path/to/weights.h5",
                         help="Path to weights .h5 file or 'coco'")
@@ -506,10 +506,11 @@ if __name__ == '__main__':
         # Training - Stage 2
         # Finetune layers from ResNet stage 4 and up
         print("Fine tune Resnet stage 4 and up")
+        #aazmi
         model.train(dataset_train, dataset_val,
                     learning_rate=config.LEARNING_RATE,
                     epochs=120,
-                    layers='4+',
+                    layers='4+',#aazmi: 5+
                     augmentation=augmentation)
 
         # Training - Stage 3

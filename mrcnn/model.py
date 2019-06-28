@@ -197,7 +197,7 @@ def resnet_graph(input_image, architecture, stage5=False, train_bn=True):
         x = identity_block(x, 3, [256, 256, 1024], stage=4, block=chr(98 + i), train_bn=train_bn)
     C4 = x
     # Stage 5
-    if stage5:
+    if stage5:#aazmi
         x = conv_block(x, 3, [512, 512, 2048], stage=5, block='a', train_bn=train_bn)
         x = identity_block(x, 3, [512, 512, 2048], stage=5, block='b', train_bn=train_bn)
         C5 = x = identity_block(x, 3, [512, 512, 2048], stage=5, block='c', train_bn=train_bn)
@@ -2316,7 +2316,7 @@ class MaskRCNN():
             # From a specific Resnet stage and up
             "3+": r"(res3.*)|(bn3.*)|(res4.*)|(bn4.*)|(res5.*)|(bn5.*)|(mrcnn\_.*)|(rpn\_.*)|(fpn\_.*)",
             "4+": r"(res4.*)|(bn4.*)|(res5.*)|(bn5.*)|(mrcnn\_.*)|(rpn\_.*)|(fpn\_.*)",
-            "5+": r"(res5.*)|(bn5.*)|(mrcnn\_.*)|(rpn\_.*)|(fpn\_.*)",
+            "5+": r"(res5.*)|(bn5.*)|(mrcnn\_.*)|(rpn\_.*)|(fpn\_.*)",#aazmi
             # All layers
             "all": ".*",
         }
