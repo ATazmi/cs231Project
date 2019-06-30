@@ -109,3 +109,7 @@ annotations/
 mask_rcnn_coco.h5
 .vscode/
 *workspace
+images/val2017
+images/train2017
+images/annotations
+logs/
