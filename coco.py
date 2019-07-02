@@ -78,13 +78,13 @@ class CocoConfig(Config):
 
     # We use a GPU with 12GB memory, which can fit two images.
     # Adjust down if you use a smaller GPU.
-    IMAGES_PER_GPU = 2
+    IMAGES_PER_GPU = 1
 
     # Uncomment to train on 8 GPUs (default is 1)
     # GPU_COUNT = 8
 
     # Number of classes (including background)
-    NUM_CLASSES = 1 + 80  # COCO has 80 classes
+    NUM_CLASSES = 1 + 2 #80  # COCO has 80 classes
 
 
 ############################################################
@@ -463,6 +463,7 @@ if __name__ == '__main__':
     elif args.model.lower() == "last":
         # Find last trained weights
         model_path = model.find_last()
+        print("last trained model path found!")
     elif args.model.lower() == "imagenet":
         # Start from ImageNet trained weights
         model_path = model.get_imagenet_weights()
